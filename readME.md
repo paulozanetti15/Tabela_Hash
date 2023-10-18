@@ -20,3 +20,37 @@ Neste projeto, implementamos uma Tabela Hash em Java que incorpora várias carac
 - **Teste de Eficiência na Busca:** Implementa um teste de eficiência que compara os dois métodos de tratamento de colisão, medindo o tempo (em segundos) necessário para realizar a busca.
 - **Consideração do Fator de Carga:** O sistema leva em consideração o fator de carga (capacidade máxima / tamanho) e duplica automaticamente o tamanho do array de armazenamento utilizado na tabela hash, conforme necessário para otimizar o desempenho.
 
+## Metodo de Busca
+
+                System.out.print("Número da camisa a ser buscado: ");
+                int numero = scanner.nextInt();
+
+                ArrayList<Dado> resultados = tabela.buscar(numero);
+                if (resultados != null && !resultados.isEmpty()) {
+                    for (Dado resultado : resultados) {
+                        System.out.println("Jogador encontrado: " + resultado.getNome());
+                    }
+                } else {
+                    System.out.println("Jogador não encontrado.");
+                }
+## Metodo de Inserir
+
+                System.out.print("Número da camisa: ");
+                int numero = scanner.nextInt();
+                scanner.nextLine();
+                System.out.print("Nome do jogador: ");
+                String nome = scanner.nextLine();
+
+                Dado jogador = new Dado(numero, nome);
+                tabela.inserir(jogador);
+## Metodo de Remocao
+
+                System.out.print("Número da camisa a ser removido: ");
+                int numero = scanner.nextInt();
+
+                Dado resultado = tabela.remover(numero);
+                if (resultado != null) {
+                    System.out.println("Jogador removido: " + resultado.getNome());
+                } else {
+                    System.out.println("Jogador não encontrado.");
+                }
