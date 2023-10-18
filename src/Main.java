@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
@@ -7,7 +8,7 @@ public class Main {
 
         while (true) {
             System.out.println("\nCLUBE DE REGATAS DO FLAMENGO");
-            System.out.println("\nOlá Adenor, escolha uma ação para o seu gereciamento de elenco:");
+            System.out.println("\nOlá Adenor, escolha uma ação para o seu gerenciamento de elenco:");
             System.out.println("1. Inserir jogador");
             System.out.println("2. Buscar jogador");
             System.out.println("3. Remover jogador");
@@ -30,9 +31,11 @@ public class Main {
                 System.out.print("Número da camisa a ser buscado: ");
                 int numero = scanner.nextInt();
 
-                Dado resultado = tabela.buscar(numero);
-                if (resultado != null) {
-                    System.out.println("Jogador encontrado: " + resultado.getNome());
+                ArrayList<Dado> resultados = tabela.buscar(numero);
+                if (resultados != null && !resultados.isEmpty()) {
+                    for (Dado resultado : resultados) {
+                        System.out.println("Jogador encontrado: " + resultado.getNome());
+                    }
                 } else {
                     System.out.println("Jogador não encontrado.");
                 }

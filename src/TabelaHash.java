@@ -33,16 +33,18 @@ public class TabelaHash {
         tamanho++;
     }
 
-    public Dado buscar(int chave) {
+    public ArrayList<Dado> buscar(int chave) {
         int indice = calcularIndice(chave);
+        ArrayList<Dado> jogadoresEncontrados = new ArrayList<>();
+
         if (tabela[indice] != null) {
             for (Dado dado : tabela[indice]) {
                 if (dado.getNumero() == chave) {
-                    return dado;
+                    jogadoresEncontrados.add(dado);
                 }
             }
         }
-        return null;
+        return jogadoresEncontrados.isEmpty() ? null : jogadoresEncontrados;
     }
 
     public Dado remover(int chave) {
