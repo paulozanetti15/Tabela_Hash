@@ -7,7 +7,7 @@ public class TabelaHash {
     private float fatorCargaLimite = 0.75f;
 
     public TabelaHash(int capacidade) {
-        this.tamanho = 0;
+        this.tamanho = 10;
         this.capacidade = capacidade;
         this.tabela = new ArrayList[capacidade];
     }
