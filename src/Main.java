@@ -15,12 +15,12 @@ public class Main {
             System.out.print("Opção: ");
 
             int opcao = scanner.nextInt();
-            scanner.nextLine(); // Consumir a quebra de linha
+            scanner.nextLine();
 
             if (opcao == 1) {
                 System.out.print("Número da camisa: ");
                 int numero = scanner.nextInt();
-                scanner.nextLine(); // Consumir a quebra de linha
+                scanner.nextLine();
                 System.out.print("Nome do jogador: ");
                 String nome = scanner.nextLine();
 
